@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="PRG299.frmSignIn" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAiAAAAAAiAAAAAAAACAAAACAEAIAAgAAhAAAAAAAAA=</HashCode>
+      <FileName>frmSignIn.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PRG299.frmBusiness" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAICAAIgACAAAECAICIAAAAAAAAAAQAAAA=</HashCode>
+      <FileName>frmBusiness.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ValidationTools.Validator">
+    <Position X="3.25" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAIAAUAAAAEAAQAAAAAABAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Validator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PRG299.frmCandidate" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACBAAARCICABAxUQAgGAAIECAAAIABAMGgQAAAQAAAA=</HashCode>
+      <FileName>frmCandidate.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PRG299.frmMembershipLevel" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAoAACEAABAAAAGABAECAAAIAAAIAAQRAAQAAAI=</HashCode>
+      <FileName>frmMembershipLevel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PRG299.frmActivity" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>S6ACAJgggigKBAODIgqUMAEyCEh4FMgAECAAEARAAAY=</HashCode>
+      <FileName>frmActivity.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PRG299.frmJob" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AEACAKAAACAAABAQAQCAAAECAAAICAAAAAAAAIQAAgA=</HashCode>
+      <FileName>frmJob.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

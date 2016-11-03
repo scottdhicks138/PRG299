@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="JobFinderData.JobFinderDB">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAA=</HashCode>
+      <FileName>JobFinderDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.ActivityDB">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAACAAAAAAAAAAAAIAAAAQ=</HashCode>
+      <FileName>ActivityDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.AddressDB">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAAAAAAAAAAAAAAAAAAAAgBAAAAAAAAAAA=</HashCode>
+      <FileName>AddressDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.BusinessDB">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAACIAAAAAQAAAAA=</HashCode>
+      <FileName>BusinessDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.CandidateDB">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAACEAAAAAABAAAAAAAA=</HashCode>
+      <FileName>CandidateDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.EmailDB">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAEAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAA=</HashCode>
+      <FileName>EmailDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.JobDB">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>JobDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.PersonDB">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAEAAAAhAAAA=</HashCode>
+      <FileName>PersonDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.PhoneDB">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAQAA=</HashCode>
+      <FileName>PhoneDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JobFinderData.UpDB">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAACBAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>UpDB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
