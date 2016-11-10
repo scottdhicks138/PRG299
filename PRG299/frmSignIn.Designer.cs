@@ -123,7 +123,6 @@
             this.Controls.Add(this.lblSignIn);
             this.Name = "frmSignIn";
             this.Text = "JobFinder - Sign In";
-            this.Load += new System.EventHandler(this.frmSignIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

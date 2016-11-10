@@ -37,10 +37,7 @@
             this.lblMembershipLevels = new System.Windows.Forms.Label();
             this.radBasic = new System.Windows.Forms.RadioButton();
             this.radPremium = new System.Windows.Forms.RadioButton();
-            this.jobFinderDataSet = new PRG299.JobFinderDataSet();
             this.candidateBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.candidateTableAdapter = new PRG299.JobFinderDataSetTableAdapters.CandidateTableAdapter();
-            this.tableAdapterManager = new PRG299.JobFinderDataSetTableAdapters.TableAdapterManager();
             this.txtCCNumber = new System.Windows.Forms.TextBox();
             this.cboPaymentMethod = new System.Windows.Forms.ComboBox();
             this.txtExpiration = new System.Windows.Forms.TextBox();
@@ -52,7 +49,6 @@
             lblExpiration = new System.Windows.Forms.Label();
             lblSecurityCode = new System.Windows.Forms.Label();
             lblBillingZip = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.candidateBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,32 +129,9 @@
             this.radPremium.Text = "Premium $$$";
             this.radPremium.UseVisualStyleBackColor = true;
             // 
-            // jobFinderDataSet
-            // 
-            this.jobFinderDataSet.DataSetName = "JobFinderDataSet";
-            this.jobFinderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // candidateBindingSource
             // 
             this.candidateBindingSource.DataMember = "Candidate";
-            this.candidateBindingSource.DataSource = this.jobFinderDataSet;
-            // 
-            // candidateTableAdapter
-            // 
-            this.candidateTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActivityTableAdapter = null;
-            this.tableAdapterManager.AddressTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = null;
-            this.tableAdapterManager.CandidateTableAdapter = this.candidateTableAdapter;
-            this.tableAdapterManager.EmailTableAdapter = null;
-            this.tableAdapterManager.JobTableAdapter = null;
-            this.tableAdapterManager.PersonTableAdapter = null;
-            this.tableAdapterManager.PhoneTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PRG299.JobFinderDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // txtCCNumber
             // 
@@ -232,8 +205,6 @@
             this.Controls.Add(this.lblMembershipLevels);
             this.Name = "frmMembershipLevel";
             this.Text = "JobFinder";
-            this.Load += new System.EventHandler(this.frmMembershipLevel_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.candidateBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -245,10 +216,7 @@
         private System.Windows.Forms.Label lblMembershipLevels;
         private System.Windows.Forms.RadioButton radBasic;
         private System.Windows.Forms.RadioButton radPremium;
-        private JobFinderDataSet jobFinderDataSet;
         private System.Windows.Forms.BindingSource candidateBindingSource;
-        private JobFinderDataSetTableAdapters.CandidateTableAdapter candidateTableAdapter;
-        private JobFinderDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtCCNumber;
         private System.Windows.Forms.ComboBox cboPaymentMethod;
         private System.Windows.Forms.TextBox txtExpiration;

@@ -34,10 +34,7 @@
             System.Windows.Forms.Label lblJobDescription;
             System.Windows.Forms.Label lblNotes;
             System.Windows.Forms.Label lblJobSource;
-            this.jobFinderDataSet = new PRG299.JobFinderDataSet();
             this.jobBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jobTableAdapter = new PRG299.JobFinderDataSetTableAdapters.JobTableAdapter();
-            this.tableAdapterManager = new PRG299.JobFinderDataSetTableAdapters.TableAdapterManager();
             this.txtJobTitle = new System.Windows.Forms.TextBox();
             this.txtJobDescription = new System.Windows.Forms.TextBox();
             this.txtNotes = new System.Windows.Forms.TextBox();
@@ -50,7 +47,6 @@
             lblJobDescription = new System.Windows.Forms.Label();
             lblNotes = new System.Windows.Forms.Label();
             lblJobSource = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,32 +95,9 @@
             lblJobSource.TabIndex = 11;
             lblJobSource.Text = "Job Source:";
             // 
-            // jobFinderDataSet
-            // 
-            this.jobFinderDataSet.DataSetName = "JobFinderDataSet";
-            this.jobFinderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // jobBindingSource
             // 
             this.jobBindingSource.DataMember = "Job";
-            this.jobBindingSource.DataSource = this.jobFinderDataSet;
-            // 
-            // jobTableAdapter
-            // 
-            this.jobTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActivityTableAdapter = null;
-            this.tableAdapterManager.AddressTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = null;
-            this.tableAdapterManager.CandidateTableAdapter = null;
-            this.tableAdapterManager.EmailTableAdapter = null;
-            this.tableAdapterManager.JobTableAdapter = this.jobTableAdapter;
-            this.tableAdapterManager.PersonTableAdapter = null;
-            this.tableAdapterManager.PhoneTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PRG299.JobFinderDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // txtJobTitle
             // 
@@ -205,8 +178,6 @@
             this.Controls.Add(this.txtJobSource);
             this.Name = "frmJob";
             this.Text = "JobFinder - Job";
-            this.Load += new System.EventHandler(this.frmJob_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jobBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -215,10 +186,7 @@
 
         #endregion
 
-        private JobFinderDataSet jobFinderDataSet;
         private System.Windows.Forms.BindingSource jobBindingSource;
-        private JobFinderDataSetTableAdapters.JobTableAdapter jobTableAdapter;
-        private JobFinderDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtJobTitle;
         private System.Windows.Forms.TextBox txtJobDescription;
         private System.Windows.Forms.TextBox txtNotes;

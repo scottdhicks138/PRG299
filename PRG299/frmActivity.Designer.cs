@@ -34,10 +34,7 @@
             System.Windows.Forms.Label lblMethod;
             System.Windows.Forms.Label lblNotes;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmActivity));
-            this.jobFinderDataSet = new PRG299.JobFinderDataSet();
             this.activityBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.activityTableAdapter = new PRG299.JobFinderDataSetTableAdapters.ActivityTableAdapter();
-            this.tableAdapterManager = new PRG299.JobFinderDataSetTableAdapters.TableAdapterManager();
             this.grdActivity = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,7 +89,6 @@
             lblJob = new System.Windows.Forms.Label();
             lblMethod = new System.Windows.Forms.Label();
             lblNotes = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdActivity)).BeginInit();
             this.menuStrip1.SuspendLayout();
@@ -137,32 +133,9 @@
             lblNotes.TabIndex = 6;
             lblNotes.Text = "Description:";
             // 
-            // jobFinderDataSet
-            // 
-            this.jobFinderDataSet.DataSetName = "JobFinderDataSet";
-            this.jobFinderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // activityBindingSource
             // 
             this.activityBindingSource.DataMember = "Activity";
-            this.activityBindingSource.DataSource = this.jobFinderDataSet;
-            // 
-            // activityTableAdapter
-            // 
-            this.activityTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActivityTableAdapter = this.activityTableAdapter;
-            this.tableAdapterManager.AddressTableAdapter = null;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = null;
-            this.tableAdapterManager.CandidateTableAdapter = null;
-            this.tableAdapterManager.EmailTableAdapter = null;
-            this.tableAdapterManager.JobTableAdapter = null;
-            this.tableAdapterManager.PersonTableAdapter = null;
-            this.tableAdapterManager.PhoneTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = PRG299.JobFinderDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             // 
             // grdActivity
             // 
@@ -275,7 +248,6 @@
             this.mnuAddBusiness.Name = "mnuAddBusiness";
             this.mnuAddBusiness.Size = new System.Drawing.Size(152, 22);
             this.mnuAddBusiness.Text = "Business";
-            this.mnuAddBusiness.Click += new System.EventHandler(this.mnuAddBusiness_Click);
             // 
             // mnuEdit
             // 
@@ -619,8 +591,6 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "frmActivity";
             this.Text = "JobFinder - Activity";
-            this.Load += new System.EventHandler(this.frmActivity_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.activityBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.grdActivity)).EndInit();
             this.menuStrip1.ResumeLayout(false);
@@ -636,10 +606,7 @@
 
         #endregion
 
-        private JobFinderDataSet jobFinderDataSet;
         private System.Windows.Forms.BindingSource activityBindingSource;
-        private JobFinderDataSetTableAdapters.ActivityTableAdapter activityTableAdapter;
-        private JobFinderDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.DataGridView grdActivity;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

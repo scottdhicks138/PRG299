@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JobFinderBU;
+using JobFinderData;
 
 namespace PRG299
 {
@@ -18,40 +20,37 @@ namespace PRG299
         {
             InitializeComponent();
         }
-
-        private void personBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.personBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.jobFinderDataSet);
-
-        }
-
-        private void frmCandidate_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Candidate' table. You can move, or remove it, as needed.
-            this.candidateTableAdapter.Fill(this.jobFinderDataSet.Candidate);
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Phone' table. You can move, or remove it, as needed.
-            this.phoneTableAdapter.Fill(this.jobFinderDataSet.Phone);
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Email' table. You can move, or remove it, as needed.
-            this.emailTableAdapter.Fill(this.jobFinderDataSet.Email);
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Address' table. You can move, or remove it, as needed.
-            this.addressTableAdapter.Fill(this.jobFinderDataSet.Address);
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Person' table. You can move, or remove it, as needed.
-            this.personTableAdapter.Fill(this.jobFinderDataSet.Person);
-
-        }
-
+               
         private void btnMembershipLevel_Click(object sender, EventArgs e)
         {
-            /* Validate Candidate personal information */
+            /* Validate Candidate personal information using the Validator class*/
 
-            /* If valid, write records to Person, Address, Email, and Phone tables */
-            /* Create a new Candidate record (ID only). The other fields will be populated later */
+            /* VALID: */
+
+            /* Call Constructor to create a new Candidate object. */
+            /* Call the method to write a record to the Candidate table. This method returns the assigned ID. */
+            /* Use the properties to populate Candidate ID. The other fields will be populated later. */ 
+
+            /* Call Constructor to create new Person object. */
+            /* Call the method to write a record to the Person table. This method returns the assigned ID. */
+            /* Use the properties to populate the Person object. */
+            /* Pass the object to the method that updates the Person record. */
+
+            /* Call Constructor to create a new Address object. */
+            /* Use the properties to populate the Address object. */
+            /* Pass the object to the method that writes an Address record. */
+
+            /* Call Constructor to create a new Email object. */
+            /* Use the properties to populate the Email object. */
+            /* Pass the object to the method that writes an Email record. */
+
+            /* Call Constructor to create a new Phone record. */
+            /* Use the properties to populate the Phone object. */
+            /* Pass the object to the method that writes a Phone record. */
 
             /* Display Membership Level screen */
 
-            /* if not valid, show error messages */
+            /* NOT VALID: Show error messages */
 
         }
     }

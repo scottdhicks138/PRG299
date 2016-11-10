@@ -18,37 +18,18 @@ namespace PRG299
         {
             InitializeComponent();
         }
-
-        private void candidateBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.candidateBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.jobFinderDataSet);
-
-        }
-
-        private void candidateBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.candidateBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.jobFinderDataSet);
-
-        }
-
-        private void frmMembershipLevel_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Candidate' table. You can move, or remove it, as needed.
-            this.candidateTableAdapter.Fill(this.jobFinderDataSet.Candidate);
-
-        }
-
+                
         private void btnSubmitPayment_Click(object sender, EventArgs e)
         {
-            /* Validate information entered by user */
+            /* Validate information entered by user using the Validator class. */
 
-            /* If valid, update the fields for the candidate record */
+            /* VALID: */
 
-            /* If not valid, show error messages */
+            /* The CandidateID property has already been populated. */ 
+            /* Use the properties to populate the rest of the Candidate object. */
+            /* Pass the object to the method that updates the Candidate record. */
+
+            /* NOT VALID: Show error messages. */
         }
     }
 }

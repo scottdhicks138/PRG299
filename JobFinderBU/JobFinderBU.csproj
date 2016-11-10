@@ -52,6 +52,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BusinessLayer.cd" />
+    <None Include="Properties\DataSources\Activity.datasource" />
+    <None Include="Properties\DataSources\Address.datasource" />
+    <None Include="Properties\DataSources\Business.datasource" />
+    <None Include="Properties\DataSources\Candidate.datasource" />
+    <None Include="Properties\DataSources\Email.datasource" />
+    <None Include="Properties\DataSources\Job.datasource" />
+    <None Include="Properties\DataSources\Person.datasource" />
+    <None Include="Properties\DataSources\Phone.datasource" />
+    <None Include="Properties\DataSources\Up.datasource" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

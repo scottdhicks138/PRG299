@@ -18,54 +18,64 @@ namespace PRG299
         {
             InitializeComponent();
         }
-
-        private void activityBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.activityBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.jobFinderDataSet);
-
-        }
-
-        private void frmActivity_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Activity' table. You can move, or remove it, as needed.
-            this.activityTableAdapter.Fill(this.jobFinderDataSet.Activity);
-
-        }
-                
+                        
         private void btnModify_Click(object sender, EventArgs e)
         {
-            /* Validate information entered by the user */
+            /* Validate information entered by the user using the Validator class. */
 
-            /* Check if user entered new info in Job combo box. If yes, prepare to add Job record. */
+            /* Check if user entered new info in Job combo box. If yes... */
+                /* Show Job form prompting user to enter information. */
+                /* Call Constructor to create a new Job object. */
+                /* Use the properties to populate the Job object. */
+                /* Pass the object to the method that writes a Job record. */
 
-            /* Check if user entered new info in Contact Name combo box. If yes, prepare to add new Person record. */
+            /* Check if user entered new info in Contact Name combo box. If yes... */
+                /* Modify the Candidate form to hide the Username and Password. */
+                /* Modify the Candidate form to show Business Name and Website. */
+                /* Show the Candidate form (modified to enter Contacts). */
+                /* Validate information entered by using the Validator class. */
+                /* Call Constructor to create a new Person object. */
+                /* Use the properties to populate the Person object. */
+                /* Pass the object to the method that writes a Person record. */
+                /* Call Constructor to create a new Business object. */
+                /* Use the properties to populate the Business object. */
+                /* Pass the object to the method that writes a Business record. */
 
-            /* If Activity info is valid, update the Activity record */
+            /* If Activity info is valid... */
+                /* Call Constructor to create a new Activity object. */
+                /* Use the properties to populate the Activity object. */
+                /* Pass the object to the method that updates the Activity record. */
 
             /* If not valid, show error messages */
         }
 
         private void btnNewActivity_Click(object sender, EventArgs e)
         {
-            /* Validate information entered by the user */
+            /* Validate information entered by the user using the Validator class. */
 
-            /* If valid, write a new Activity record */
+            /* VALID: */
 
-            /* If not valid, show error messages */
+            /* Call Constructor to create a new Activity object. */
+            /* Use the properties to populate the Activity object. */
+            /* Call the method to write a record to the Activity table. */
+
+            /* NOT VALID: Show error messages */
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            /* Delete Activity record */
+            /* Call Constructor to create a new Activity object. */
+            /* Use the properties to populate the Activity object */
+            /* Pass the object to the method that deletes the Activity record. */
         }
 
         private void btnNewSearch_Click(object sender, EventArgs e)
         {
             /* Clear the text box containing search criteria */
 
-            /* Show all Activity records for that candidate */
+            /* Call method to retrieve list of all activities for that candidate. */
+            /* Bind list to grid. */
+               
         }
 
         private void mnuAddActivity_Click(object sender, EventArgs e)
@@ -89,24 +99,29 @@ namespace PRG299
             /* Show Job screen */
         }
 
-        private void mnuAddBusiness_Click(object sender, EventArgs e)
-        {
-            /* Show Business Screen */
-        }
-
         private void mnuEditAccountInfo_Click(object sender, EventArgs e)
         {
             /* Show the Candidate screen populated with information for that Candidate */
+
+            /* Validate any modifications using the Validator class. */
+
+            /* Update the Person, Address, Email, and Phone records accordingly. */
         }
 
         private void mnuEditPaymentMethod_Click(object sender, EventArgs e)
         {
             /* Show the Payment Method screen populated with information for that Candidate */
+
+            /* Validate any modifications using the Validator class. */
+
+            /* Update the Candidate table. */
         }
 
         private void mnuSearchByDate_Click(object sender, EventArgs e)
         {
             /* List Activities for specified date */
+                /* Call method to build a list of activities for specified date. */
+                /* Bind new list to grid. */
         }
 
         private void mnuSearchByDescription_Click(object sender, EventArgs e)
@@ -131,17 +146,23 @@ namespace PRG299
 
         private void mnuPrintActivityReport_Click(object sender, EventArgs e)
         {
-           /* Print report of all activities for that candidate */
+            /* Run table adapter method to fill report dataset with Activity records for that Candidate. */
+
+            /* Run Activity report. */
         }
 
         private void mnuPrintContactsList_Click(object sender, EventArgs e)
         {
-            /* Print report of all contacts for that candidate */
+            /* Run table adapter method to fill report dataset with the Contact list for that Candidate. */
+ 
+            /* Run Contact report. */
         }
 
         private void mnuPrintJobsReport_Click(object sender, EventArgs e)
         {
-            /* Print report of all jobs for that candidate */
+            /* Run table adapter method to fill report dataset with a list of Jobs for that candidate. */
+
+            /* Run Jobs report. */
         }
     }
 }

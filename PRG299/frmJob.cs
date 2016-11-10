@@ -18,27 +18,18 @@ namespace PRG299
         {
             InitializeComponent();
         }
-
-        private void jobBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.jobBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.jobFinderDataSet);
-
-        }
-
-        private void frmJob_Load(object sender, EventArgs e)
-        {
-            // TODO: This line of code loads data into the 'jobFinderDataSet.Job' table. You can move, or remove it, as needed.
-            this.jobTableAdapter.Fill(this.jobFinderDataSet.Job);
-
-        }
-
+                
         private void btnSubmit_Click(object sender, EventArgs e)
         {
-            /* Validate information entered by user. Show appropriate error messages. */
+            /* Validate information entered by user using the Validator class. */
 
-            /* If valid, write a record to the Job table. */
+            /* VALID: */
+
+            /* Call Constructor to create a new Job object. */
+            /* Use the properties to populate the Job object. */
+            /* Pass the object to the method that writes a Job record. */
+
+            /* NOT VALID: Show error messages. */
         }
     }
 }

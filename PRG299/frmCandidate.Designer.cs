@@ -39,14 +39,7 @@
             System.Windows.Forms.Label lblEmail;
             System.Windows.Forms.Label lblPhone;
             System.Windows.Forms.Label lblDescription;
-            this.jobFinderDataSet = new PRG299.JobFinderDataSet();
             this.personBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.personTableAdapter = new PRG299.JobFinderDataSetTableAdapters.PersonTableAdapter();
-            this.tableAdapterManager = new PRG299.JobFinderDataSetTableAdapters.TableAdapterManager();
-            this.addressTableAdapter = new PRG299.JobFinderDataSetTableAdapters.AddressTableAdapter();
-            this.candidateTableAdapter = new PRG299.JobFinderDataSetTableAdapters.CandidateTableAdapter();
-            this.emailTableAdapter = new PRG299.JobFinderDataSetTableAdapters.EmailTableAdapter();
-            this.phoneTableAdapter = new PRG299.JobFinderDataSetTableAdapters.PhoneTableAdapter();
             this.txtLastName = new System.Windows.Forms.TextBox();
             this.txtFirstName = new System.Windows.Forms.TextBox();
             this.txtMiddleName = new System.Windows.Forms.TextBox();
@@ -77,7 +70,6 @@
             lblEmail = new System.Windows.Forms.Label();
             lblPhone = new System.Windows.Forms.Label();
             lblDescription = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailBindingSource)).BeginInit();
@@ -175,48 +167,9 @@
             lblDescription.TabIndex = 38;
             lblDescription.Text = "Description:";
             // 
-            // jobFinderDataSet
-            // 
-            this.jobFinderDataSet.DataSetName = "JobFinderDataSet";
-            this.jobFinderDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // personBindingSource
             // 
             this.personBindingSource.DataMember = "Person";
-            this.personBindingSource.DataSource = this.jobFinderDataSet;
-            // 
-            // personTableAdapter
-            // 
-            this.personTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.ActivityTableAdapter = null;
-            this.tableAdapterManager.AddressTableAdapter = this.addressTableAdapter;
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.BusinessTableAdapter = null;
-            this.tableAdapterManager.CandidateTableAdapter = this.candidateTableAdapter;
-            this.tableAdapterManager.EmailTableAdapter = this.emailTableAdapter;
-            this.tableAdapterManager.JobTableAdapter = null;
-            this.tableAdapterManager.PersonTableAdapter = this.personTableAdapter;
-            this.tableAdapterManager.PhoneTableAdapter = this.phoneTableAdapter;
-            this.tableAdapterManager.UpdateOrder = PRG299.JobFinderDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // addressTableAdapter
-            // 
-            this.addressTableAdapter.ClearBeforeFill = true;
-            // 
-            // candidateTableAdapter
-            // 
-            this.candidateTableAdapter.ClearBeforeFill = true;
-            // 
-            // emailTableAdapter
-            // 
-            this.emailTableAdapter.ClearBeforeFill = true;
-            // 
-            // phoneTableAdapter
-            // 
-            this.phoneTableAdapter.ClearBeforeFill = true;
             // 
             // txtLastName
             // 
@@ -245,7 +198,6 @@
             // addressBindingSource
             // 
             this.addressBindingSource.DataMember = "Address";
-            this.addressBindingSource.DataSource = this.jobFinderDataSet;
             // 
             // txtStreetAddress
             // 
@@ -274,7 +226,6 @@
             // emailBindingSource
             // 
             this.emailBindingSource.DataMember = "Email";
-            this.emailBindingSource.DataSource = this.jobFinderDataSet;
             // 
             // txtEmail
             // 
@@ -287,7 +238,6 @@
             // phoneBindingSource
             // 
             this.phoneBindingSource.DataMember = "Phone";
-            this.phoneBindingSource.DataSource = this.jobFinderDataSet;
             // 
             // txtPhone
             // 
@@ -308,7 +258,6 @@
             // candidateBindingSource
             // 
             this.candidateBindingSource.DataMember = "Candidate";
-            this.candidateBindingSource.DataSource = this.jobFinderDataSet;
             // 
             // lblEnter
             // 
@@ -346,6 +295,7 @@
             this.lblUsername.Size = new System.Drawing.Size(58, 13);
             this.lblUsername.TabIndex = 43;
             this.lblUsername.Text = "Username:";
+            this.lblUsername.Visible = false;
             // 
             // txtUsername
             // 
@@ -353,6 +303,7 @@
             this.txtUsername.Name = "txtUsername";
             this.txtUsername.Size = new System.Drawing.Size(126, 20);
             this.txtUsername.TabIndex = 44;
+            this.txtUsername.Visible = false;
             // 
             // lblPassword
             // 
@@ -362,6 +313,7 @@
             this.lblPassword.Size = new System.Drawing.Size(56, 13);
             this.lblPassword.TabIndex = 45;
             this.lblPassword.Text = "Password:";
+            this.lblPassword.Visible = false;
             // 
             // txtPassword
             // 
@@ -369,6 +321,7 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(146, 20);
             this.txtPassword.TabIndex = 46;
+            this.txtPassword.Visible = false;
             // 
             // frmCandidate
             // 
@@ -403,8 +356,6 @@
             this.Controls.Add(this.txtMiddleName);
             this.Name = "frmCandidate";
             this.Text = "JobFinder - New Candidate";
-            this.Load += new System.EventHandler(this.frmCandidate_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.jobFinderDataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.personBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.emailBindingSource)).EndInit();
@@ -417,24 +368,17 @@
 
         #endregion
 
-        private JobFinderDataSet jobFinderDataSet;
         private System.Windows.Forms.BindingSource personBindingSource;
-        private JobFinderDataSetTableAdapters.PersonTableAdapter personTableAdapter;
-        private JobFinderDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private System.Windows.Forms.TextBox txtLastName;
         private System.Windows.Forms.TextBox txtFirstName;
         private System.Windows.Forms.TextBox txtMiddleName;
-        private JobFinderDataSetTableAdapters.AddressTableAdapter addressTableAdapter;
         private System.Windows.Forms.BindingSource addressBindingSource;
-        private JobFinderDataSetTableAdapters.EmailTableAdapter emailTableAdapter;
         private System.Windows.Forms.TextBox txtStreetAddress;
         private System.Windows.Forms.TextBox txtCity;
         private System.Windows.Forms.TextBox txtPostalCode;
         private System.Windows.Forms.BindingSource emailBindingSource;
-        private JobFinderDataSetTableAdapters.PhoneTableAdapter phoneTableAdapter;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.BindingSource phoneBindingSource;
-        private JobFinderDataSetTableAdapters.CandidateTableAdapter candidateTableAdapter;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.BindingSource candidateBindingSource;
