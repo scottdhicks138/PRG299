@@ -117,11 +117,11 @@ namespace JobFinderBU
         {
             get
             {
-                return contactNotes;
+                return contactType;
             }
             set
             {
-                contactNotes = value;
+                contactType = value;
             }
         }
 

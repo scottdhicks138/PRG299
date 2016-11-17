@@ -14,6 +14,8 @@ namespace PRG299
 {
     public partial class frmSignIn : Form
     {
+        frmActivity frmActivity;
+
         public frmSignIn()
         {
             InitializeComponent();
@@ -28,7 +30,12 @@ namespace PRG299
         {
             /* Validate Username and Password. The combination of Username and Password must exist in the Up table. */
 
-            /* If valid, display Activity screen. Not valid, show error message */ 
+            /* If valid, display Activity screen. Not valid, show error message */
+
+            this.Hide();
+            frmActivity = new frmActivity();
+            frmActivity.Show(); 
+
         }
 
     }

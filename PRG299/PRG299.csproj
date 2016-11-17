@@ -121,6 +121,15 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <None Include="PresentationLayer.cd" />
+    <None Include="Properties\DataSources\JobFinderBU.Activity.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Address.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Business.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Candidate.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Email.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Job.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Person.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Phone.datasource" />
+    <None Include="Properties\DataSources\JobFinderBU.Up.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -139,8 +148,8 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="JobFinder_log.ldf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>JobFinder.mdf</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <None Include="Resources\Filter.png" />
   </ItemGroup>

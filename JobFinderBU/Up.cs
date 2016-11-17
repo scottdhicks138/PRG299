@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace JobFinderBU
 {
-    class Up
+    public class Up
     {
         /* * * D A T A   M E M B E R S * * */
 

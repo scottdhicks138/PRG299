@@ -9,16 +9,69 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using JobFinderBU;
+using JobFinderData;
 
 namespace PRG299
 {
     public partial class frmActivity : Form
     {
+        List<Activity> activityList = ActivityDB.GetActivities(" ");
+
+        
         public frmActivity()
         {
             InitializeComponent();
         }
-                        
+
+        private void frmActivity_Load(object sender, EventArgs e)
+        {
+            if (activityList.Count > 0)
+            {
+                // Grid was bound to activityBindingSource at design time.
+
+                // Now bind grid to activityList.
+
+                grdActivity.DataSource = activityList;
+
+                // activityBindingSource can now be cleared and bound to detail view
+
+                activityBindingSource.Clear();
+                activityBindingSource.Add(activityList[0]);
+
+                // txtMethod.Text = activityList[0].ContactMethod.ToString();
+                  
+                
+            }
+            else
+            {
+                MessageBox.Show("No records found");
+                this.Close();
+            }
+        }
+
+        private void grdActivity_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Clear activityBindingSource and bind to new detail view
+
+            activityBindingSource.Clear();
+            activityBindingSource.Add(activityList[grdActivity.CurrentCell.RowIndex]);
+        }
+
+        private void activityBindingSource_PositionChanged(object sender, EventArgs e)
+        {
+            CheckState();
+        }
+                
+        private void CheckState()
+        {
+            if (this.grdActivity.CurrentRow.Cells[3].Value.ToString() == "Y")
+            {
+                this.chkAddToCalendar.Checked = true;
+            }
+            else this.chkAddToCalendar.Checked = false;
+        }
+
         private void btnModify_Click(object sender, EventArgs e)
         {
             /* Validate information entered by the user using the Validator class. */
@@ -43,8 +96,27 @@ namespace PRG299
 
             /* If Activity info is valid... */
                 /* Call Constructor to create a new Activity object. */
+
+            Activity editActivity = new Activity();
+
                 /* Use the properties to populate the Activity object. */
+
+            // newActivity.CandidateID =
+            editActivity.ActivityDateTime = tmDateTime.Value;
+            editActivity.Notes = txtNotes.Text;
+
+            if (chkAddToCalendar.Checked == true) editActivity.ScheduleFlag = 'Y';
+            else editActivity.ScheduleFlag = 'N';
+
+            editActivity.ContactMethod = txtMethod.Text;
+            // newActivity.JobID = 0;
+            // newActivity.ContactID = 0;
+            
                 /* Pass the object to the method that updates the Activity record. */
+
+            ActivityDB.EditActivity(editActivity);
+
+            /* Reload activityList 
 
             /* If not valid, show error messages */
         }
@@ -56,8 +128,22 @@ namespace PRG299
             /* VALID: */
 
             /* Call Constructor to create a new Activity object. */
+
+            Activity newActivity = new Activity();
+
             /* Use the properties to populate the Activity object. */
+
+            // candidateID
+            // activityDateTime
+            // notes
+            // scheduleFlag
+            // contactMethod
+            // jobID
+            // contactID
+            
             /* Call the method to write a record to the Activity table. */
+
+            ActivityDB.NewActivity(newActivity);
 
             /* NOT VALID: Show error messages */
         }
@@ -164,5 +250,11 @@ namespace PRG299
 
             /* Run Jobs report. */
         }
+                
+        private void frmActivity_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+              
     }
 }

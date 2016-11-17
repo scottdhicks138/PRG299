@@ -1,4 +1,6 @@
-﻿using System;
+﻿/* JobFinder by Scott Hicks */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,7 +12,7 @@ namespace JobFinderData
 {
     public static class ActivityDB
     {
-        public static List<Activity> GetActivities()
+        public static List<Activity> GetActivities(string searchBy)
         {
             List<Activity> activityList = new List<Activity>();
 
@@ -22,6 +24,8 @@ namespace JobFinderData
 
             string selectStatement = "SELECT candidateID, activityDateTime, notes, scheduleFlag, contactMethod, " +
                                             "jobID, contactID FROM Activity ";
+
+            if (searchBy != " ") selectStatement = selectStatement + searchBy;
 
             SqlCommand selectCommand = new SqlCommand(selectStatement, connection);
 
@@ -67,19 +71,84 @@ namespace JobFinderData
             return activityList;
         }
 
-        public static void NewActivity()
+        public static void NewActivity(Activity newActivity)
         {
+            /* Connect to Local Copy */
+
+            SqlConnection connection = JobFinderDB.GetLocalConnection();
+            
             /* Write record to Activity table */
+
+            string insertStatement = "INSERT INTO Activity VALUES (CandidateID, ActivityDateTime, Notes, " +
+                                     "ScheduleFlag, ContactMethod, JobID, ContactID";
+            try
+            {
+                connection.Open();
+
+                SqlCommand selectCommand = new SqlCommand(insertStatement, connection);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
-        public static void EditActivity()
+        public static void EditActivity(Activity editActivity)
         {
+            /* Connect to Local Copy */
+
+            SqlConnection connection = JobFinderDB.GetLocalConnection();
+                        
             /* Modify record in Activity table */
+
+            string updateStatement = "UPDATE Activity " +
+                                     "SET notes = Notes, scheduleFlag = ScheduleFlag, contactMethod = ContactMethod, " +
+                                         "jobID = JobID, contactID = ContactID " +
+                                     "WHERE candidateID = CandidateID AND activityDateTime = ActivityDateTime";
+            try
+            {
+                connection.Open();
+
+                SqlCommand selectCommand = new SqlCommand(updateStatement, connection);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
 
-        public static void DeleteActivity()
+        public static void DeleteActivity(Activity deleteActivity)
         {
+            /* Connect to Local Copy */
+
+            SqlConnection connection = JobFinderDB.GetLocalConnection();
+
             /* Delete record in Activity table */
+
+            string deleteStatement = "DELETE FROM Activity " +
+                                     "WHERE candidateID = CandidateID AND activityDateTime = ActivityDateTime";
+            try
+            {
+                connection.Open();
+
+                SqlCommand selectCommand = new SqlCommand(deleteStatement, connection);
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+            finally
+            {
+                connection.Close();
+            }
         }
     }
 }
